@@ -1,10 +1,11 @@
 import { RtcTokenBuilder, RtcRole } from 'agora-access-token';
+import config from '../config';
 
-const appID = '6aa13f4a132d45b785050432bfd98715';
-const appCertificate = 'ce9bd3dc64ca4f108cba22955d7c634d';
+const appID = config.agora.appId;
+const appCertificate = config.agora.appCertificate;
 const role = RtcRole.PUBLISHER;
 
-const expirationTimeInSeconds = 7200
+const expirationTimeInSeconds = config.agora.expireTimeInSeconds;
 
 const currentTimestamp = Math.floor(Date.now() / 1000)
 
