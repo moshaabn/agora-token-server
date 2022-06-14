@@ -3,8 +3,13 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import cors from 'cors';
 import { generateToken } from './modules';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
+
+const port = process.env.PORT;
 
 app.use(cors(), helmet(), morgan('dev'), json(), urlencoded({ extended: true }));
 
@@ -27,6 +32,6 @@ app.post('/subscribe', (req, res) => {
     res.send({ token, channel });
 });
 
-app.listen(3000, () => {
-    console.log('Example app listening on port 3000!');
+app.listen(port, () => {
+    console.log('Example app listening on port: ' + port);
 });
