@@ -13,6 +13,8 @@ const port = process.env.PORT;
 
 app.use(cors(), helmet(), morgan('dev'), json(), urlencoded({ extended: true }));
 
+app.get('/', (req, res) => { res.send('A T Server') });
+
 app.post('/subscribe', (req, res) => {
 
     const { appointment_id, user_id } = req.body;
