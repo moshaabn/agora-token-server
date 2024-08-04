@@ -3,7 +3,8 @@ import config from '../config';
 
 const appID = config.agora.appId;
 const appCertificate = config.agora.appCertificate;
-const role = RtcRole.PUBLISHER;
+const role = RtcRole.SUBSCRIBER;
+// const role = RtcRole.PUBLISHER;
 
 const expirationTimeInSeconds = config.agora.expireTimeInSeconds;
 
